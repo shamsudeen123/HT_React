@@ -1,0 +1,9 @@
+<svg id="Component_557_2" data-name="Component 557 – 2" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <rect id="Buttons_IconButton_Xs_Default_background" data-name="Buttons/ IconButton/ Xs/ Default background" width="32" height="32" rx="16" fill="#f4f8fb" opacity="0"/>
+  <g id="Group_534" data-name="Group 534" transform="translate(5 5)">
+    <g id="close">
+      <rect id="Rectangle" width="22" height="22" transform="translate(22 22) rotate(180)" fill="#637381" opacity="0"/>
+      <path id="Path" d="M6.8,5.5l3.942-3.933a.92.92,0,1,0-1.3-1.3L5.505,4.211,1.573.27a.92.92,0,0,0-1.3,1.3L4.213,5.5.271,9.436a.92.92,0,1,0,1.3,1.3L5.505,6.8l3.933,3.942a.92.92,0,1,0,1.3-1.3Z" transform="translate(5.495 5.496)" fill="#7b858e"/>
+    </g>
+  </g>
+</svg>

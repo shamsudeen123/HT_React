@@ -1,0 +1,11 @@
+<svg id="_" data-name="#" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <rect id="BG" width="40" height="40" rx="12" fill="#e0656b" opacity="0.16"/>
+  <g id="_ic_check" data-name="🥬/ ic_check" transform="translate(8 8)">
+    <g id="_gr" data-name="#gr">
+      <rect id="Rectangle" width="24" height="24" opacity="0"/>
+      <path id="Polygon_1" data-name="Polygon 1" d="M11,0,22,18H0Z" transform="translate(1 2)" fill="#e0656b"/>
+      <line id="Line_16" data-name="Line 16" y2="6" transform="translate(12 14) rotate(180)" fill="none" stroke="#fff" stroke-width="2"/>
+      <circle id="Ellipse_90" data-name="Ellipse 90" cx="1" cy="1" r="1" transform="translate(13 17.5) rotate(180)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

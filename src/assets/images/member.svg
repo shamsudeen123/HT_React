@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="58" height="58" viewBox="0 0 58 58">
+  <g id="Group_521" data-name="Group 521" transform="translate(-366.311 -23.467)">
+    <rect id="Rectangle_58" data-name="Rectangle 58" width="58" height="58" transform="translate(366.311 23.467)" fill="#101011" opacity="0"/>
+    <circle id="Ellipse_23" data-name="Ellipse 23" cx="22.5" cy="22.5" r="22.5" transform="translate(370.311 30.467)" fill="#4bb58c" opacity="0.125"/>
+    <path id="Shape" d="M.008,4.269a3.016,3.016,0,1,1,2.13.881A3.016,3.016,0,0,1,.008,4.269Z" transform="translate(373.022 27.318)" fill="#4bb58c" opacity="0.25"/>
+    <path id="Path" d="M7.165,5.822A1.489,1.489,0,0,1,6.11,5.384L4.329,3.6,2.548,5.384A1.493,1.493,0,0,1,.437,3.273L3.274.437a1.493,1.493,0,0,1,2.111,0L8.221,3.273A1.493,1.493,0,0,1,7.165,5.822Z" transform="translate(413.257 31.078)" fill="#4bb58c" opacity="0.3"/>
+    <g id="Group_525" data-name="Group 525" transform="translate(-162.723 -165.817)">
+      <circle id="Ellipse_21" data-name="Ellipse 21" cx="6.207" cy="6.207" r="6.207" transform="translate(544.894 209.571)" fill="#4bb58c" opacity="0.296"/>
+      <g id="Group_523" data-name="Group 523" transform="translate(541.469 209.571)">
+        <circle id="Ellipse_22" data-name="Ellipse 22" cx="6.207" cy="6.207" r="6.207" transform="translate(3.426 0)" fill="none" stroke="#4bb58c" stroke-width="2.2"/>
+        <path id="Path_35" data-name="Path 35" d="M33.776,56.221a6.251,6.251,0,1,1,1.7,12.268M16,72.984a10.58,10.58,0,0,1,17.31,0m2.166-4.495a10.565,10.565,0,0,1,8.655,4.495" transform="translate(-15.996 -55.559)" fill="none" stroke="#4bb58c" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"/>
+      </g>
+    </g>
+  </g>
+</svg>

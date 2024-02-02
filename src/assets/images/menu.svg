@@ -1,0 +1,10 @@
+<svg id="Component_569_9" data-name="Component 569 – 9" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+  <path id="Path_18" data-name="Path 18" d="M22,0A22,22,0,1,1,0,22,22,22,0,0,1,22,0Z" fill="#f4f8fb"/>
+  <g id="Group_1247" data-name="Group 1247" transform="translate(9.539 10)">
+    <rect id="Rectangle_450" data-name="Rectangle 450" width="25" height="25" transform="translate(0.461)" fill="none"/>
+    <path id="Path_696" data-name="Path 696" d="M741.271,457.583h10.344a1.591,1.591,0,0,0,0-3.183H734.11a1.591,1.591,0,0,0,0,3.183h3.979" transform="translate(-730.133 -443.261)" fill="#7b858e" fill-rule="evenodd"/>
+    <path id="Path_697" data-name="Path 697" d="M740.067,457.174h10.344a2.387,2.387,0,0,0,0-4.774h-17.5a2.387,2.387,0,0,0,0,4.774h3.979a.8.8,0,0,0,0-1.591h-3.979a.8.8,0,0,1,0-1.591h17.5a.8.8,0,0,1,0,1.591H740.067a.8.8,0,1,0,0,1.591Z" transform="translate(-728.929 -442.056)" fill="#101011" fill-rule="evenodd"/>
+    <path id="Path_698" data-name="Path 698" d="M752.8,454.787a2.388,2.388,0,0,0-2.387-2.387h-17.5a2.387,2.387,0,0,0,0,4.774h17.5A2.388,2.388,0,0,0,752.8,454.787Zm-1.591,0a.8.8,0,0,1-.8.8h-17.5a.8.8,0,0,1,0-1.591h17.5A.8.8,0,0,1,751.206,454.787Z" transform="translate(-728.929 -449.217)" fill="#101011" fill-rule="evenodd"/>
+    <path id="Path_699" data-name="Path 699" d="M752.8,454.787a2.388,2.388,0,0,0-2.387-2.387h-17.5a2.387,2.387,0,0,0,0,4.774h17.5A2.388,2.388,0,0,0,752.8,454.787Zm-1.591,0a.8.8,0,0,1-.8.8h-17.5a.8.8,0,0,1,0-1.591h17.5A.8.8,0,0,1,751.206,454.787Z" transform="translate(-728.929 -434.895)" fill="#101011" fill-rule="evenodd"/>
+  </g>
+</svg>
