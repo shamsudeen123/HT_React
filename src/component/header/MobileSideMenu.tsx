@@ -23,11 +23,9 @@ import { routerUtils } from "@/utils/routerUtils";
 type Anchor = "top" | "left" | "bottom" | "right";
 export default function MobileSideMenu(props: any) {
   const menuList = [
-    "Attendance",
+    "Ticket Management",
     "User Management",
-    "Unknown Users",
-    "Reports",
-    "System Settings",
+    
   ];
   const router = useRouter();
   const [indexValue, setIndexValue] = useState(0);
