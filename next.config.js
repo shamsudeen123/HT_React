@@ -3,6 +3,13 @@ const nextConfig = ({
   env: {
     HOST_API_KEY: "http://146.190.56.52:3000",
   },
+  apps: [
+    {
+      name: 'HT_React',
+      script: 'npm',
+      args: 'start'
+    }
+  ]
 });
 
 module.exports = nextConfig;
