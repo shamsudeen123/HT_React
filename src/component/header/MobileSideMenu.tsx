@@ -33,7 +33,15 @@ export default function MobileSideMenu(props: any) {
     left: false,
   });
   const pathName = usePathname();
+  const role: any =
+  typeof window !== "undefined" ? localStorage.getItem("role") : "";
+  const dealerName =
+  typeof window !== "undefined" ? localStorage.getItem("dealerName") : "";
+  const imagePath =
+    typeof window !== "undefined" ? localStorage.getItem("profileImg") : "";
+    
   useEffect(() => {
+
     switch (pathName) {
       case "/dashboard":
         setIndexValue(0);
@@ -123,10 +131,10 @@ export default function MobileSideMenu(props: any) {
       </Grid>
 
       <Grid className="profile-details">
-        <Avatar alt="Remy Sharp" src={profileImg.src} />
+      <Avatar alt="Remy Sharp" src={imagePath  ? imagePath : profileImg} style={{objectFit: "contain"}} />
         <Grid>
-          <Typography variant="h6"> Epic Attendance</Typography>
-          <Typography variant="body1"> Admin</Typography>
+          <Typography variant="h6"> {dealerName}</Typography>
+          <Typography variant="body1"> {parseInt(role) === 0 ? "Admin" : parseInt(role) === 1 ? "Dealer" : "Sales Person"}</Typography>
         </Grid>
       </Grid>
       <Grid className="menu-list-wrapper" sx={{ marginTop: 1.5 }}>

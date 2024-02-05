@@ -1,8 +1,8 @@
 "use client";
 import { Grid, Link, Typography } from "@mui/material";
-import logo from "@/assets/images/logo.svg";
 import LoginForm from "@/component/login/page";
 import OuterSideView from "@/component/outerSideView/OuterSideView";
+import logo from "@/assets/images/app_logo_md.png";
 
 export default function Login() {
 
@@ -21,7 +21,7 @@ export default function Login() {
                   variant="h2"
                   className="fs-26 fw-600 primary-font-color"
                 >
-                  Sign in to Admin Dashboard
+                  Sign in to Dashboard
                 </Typography>
                 <Typography
                   variant="body1"
