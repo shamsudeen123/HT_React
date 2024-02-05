@@ -22,11 +22,6 @@ import { routerStrings } from "@/strings";
 import { routerUtils } from "@/utils/routerUtils";
 type Anchor = "top" | "left" | "bottom" | "right";
 export default function MobileSideMenu(props: any) {
-  const menuList = [
-    "Ticket Management",
-    "User Management",
-    
-  ];
   const router = useRouter();
   const [indexValue, setIndexValue] = useState(0);
   const [state, setState] = useState({
@@ -39,7 +34,13 @@ export default function MobileSideMenu(props: any) {
   typeof window !== "undefined" ? localStorage.getItem("dealerName") : "";
   const imagePath =
     typeof window !== "undefined" ? localStorage.getItem("profileImg") : "";
-    
+    const menuList = parseInt(role) === 0 ? [
+      "Ticket Management",
+      "User Management",
+    ] : [
+      "Ticket Management",
+    ];
+
   useEffect(() => {
 
     switch (pathName) {
