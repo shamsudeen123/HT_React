@@ -666,7 +666,7 @@ function CreateTicketComponent() {
                         <option value={"Multi City"}>Multi City</option>
                       </Field>
                     </Grid>
-                    {userRole === "0" && userId && (
+                    {parseInt(userRole) === 0 && userId && (
                       <>
                       <Grid item xs={12} sm={12} md={4}>
                         <Select
