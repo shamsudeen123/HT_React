@@ -199,7 +199,7 @@ function ProfileHeader() {
                 disabled={role === "1" && data?.ticketStatus !== "1" ? true : false}
               >
                 <img src={editProfile.src} alt="" />
-                EDIT USER
+                Edit Ticket
               </Button>
             </Grid>
 {/* } */}
