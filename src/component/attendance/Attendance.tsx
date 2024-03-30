@@ -52,6 +52,7 @@ const TABLE_HEAD = [
     minWidth: 100,
     align: "left",
   },
+  { id: "updatedBy", label: "Updated By", minWidth: 100, align: "left" },
   // { id: "total_entries", label: "Total Entries", minWidth: 100, align: "left" },
   // { id: "status", label: "Status", minWidth: 70, align: "left" },
   // { id: "icon", label: "", align: "left" },
@@ -117,15 +118,15 @@ export default function Attendance() {
           ?.toString()
           .padStart(2, "0")} Mn`;
         return {
-          passengerName:
-            row?.Passengers[0]?.givenName + row?.Passengers[0]?.lastName,
+          passengerName: row?.passengerName,
           departure: row?.departure,
           arrival: row?.arrival,
           dealerName: row?.dealerName,
           numberOfPassengers: row?.Passengers.length,
           imagePath: row?.imagePath,
           id: row?.id,
-          ticketStatus: row?.ticketStatus === "0" ? "Failed" : row?.ticketStatus === "1" ? "Started" :  row?.ticketStatus === "2" ? "In progress" : "Completed"
+          ticketStatus: row?.ticketStatus === "0" ? "Failed" : row?.ticketStatus === "1" ? "Started" :  row?.ticketStatus === "2" ? "In progress" : "Completed",
+          updatedBy: row?.updatedBy ? row?.updatedBy : row?.dealerName
         };
       });
       setTableDatas(formattedData);
@@ -251,6 +252,7 @@ if(reduxSearchInput || dealerId) {
                     placeholder="Search by name"
                   />
                 </Grid>
+                
                 <Grid item xs={12} lg={4} xl={4}>
                   {role !== "1" &&
                   <FormControl
@@ -299,6 +301,7 @@ if(reduxSearchInput || dealerId) {
         </Grid>
       </Grid>
       <Grid>
+        {tableDatas?.length > 0 ? 
         <TableComponent
           headLabel={TABLE_HEAD}
           tableData={tableDatas}
@@ -306,7 +309,7 @@ if(reduxSearchInput || dealerId) {
             setPageCount={setPageCount}
             totalPages={tableData?.totalPages}
             pages={pageCount}
-        />
+        /> : <h1 style={{display: "flex", justifyContent: "center", marginTop: 80, color: "#DEDEDE"}}>No Data Found</h1> }
       </Grid>
     </>
   );

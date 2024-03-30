@@ -39,6 +39,7 @@ import ASSelect from "@/molecules/ASSelect";
 import { useDispatch, useSelector } from "react-redux";
 import { convertImagePathToFile } from "@/utils/fileConversion";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import TableSkeleton from "../table/TableSkeleton";
 
 // add new user form
 type Props = {
@@ -79,7 +80,8 @@ function AddNewUserComponent({ fieldValues }: Props) {
   const [isLoginBtnClicked, setIsLoginBtnClicked] = useState(false);
   const [isImageSelected, setIsImageSelected] = useState(false);
   const [isMultipleImageSelected, setIsMultipleImageSelected] = useState(false);
-  const [imgClicked, setImgClicked] = useState(false)
+  const [imgClicked, setImgClicked] = useState(false);
+  const isLoading =  useSelector((state: any) => state.attendanceSystem?.isLoading);
 
   // Define initial form values
   const [initialValues, setInitialValues] = useState({
@@ -429,6 +431,8 @@ function AddNewUserComponent({ fieldValues }: Props) {
                     {STRINGS.PROFILE_PIC}
                   </Typography>
                   <Grid sx={{ width: "130px", position: "relative" }}>
+                    {isLoading ? 
+                    <TableSkeleton /> :
                     <img
                       src={profileImg || ic_profile_pic.src}
                       width={130}
@@ -439,6 +443,7 @@ function AddNewUserComponent({ fieldValues }: Props) {
                         objectFit: "cover",
                       }}
                     />
+}
                     <Button
                       type="button"
                       sx={{

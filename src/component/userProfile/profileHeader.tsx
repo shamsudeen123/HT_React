@@ -191,6 +191,7 @@ function ProfileHeader() {
         <Grid item xs={12} sm={6} lg={4}>
           <Grid container spacing={1} sx={{display: "flex", justifyContent: "end"}}>
             {/* {role !== "1" && data?.ticketStatus !== "2" && */}
+            {role === "1" && data?.ticketStatus !== "1" ? <></> :
             <Grid item xs={12} sm={6}>
               <Button
                 variant="text"
@@ -202,6 +203,7 @@ function ProfileHeader() {
                 Edit Ticket
               </Button>
             </Grid>
+}
 {/* } */}
             {/* <Grid item xs={12} sm={6}>
               <Button

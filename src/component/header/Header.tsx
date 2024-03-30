@@ -89,7 +89,7 @@ export default function Header() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <MenuItem key={setting} onClick={handleLogout}>
                   <Typography textAlign="center" onClick={handleLogout}>
                     {setting}
                   </Typography>

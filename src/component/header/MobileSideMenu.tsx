@@ -161,7 +161,7 @@ export default function MobileSideMenu(props: any) {
           ))}
         </List>
       </Grid>
-      <Grid>
+      <Grid onClick={handleLogout}>
         <Button className="mobile-menu-btn" onClick={handleLogout}>
           Logout
         </Button>

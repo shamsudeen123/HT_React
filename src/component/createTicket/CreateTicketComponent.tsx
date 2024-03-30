@@ -35,6 +35,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import moment from "moment";
 import ic_pdf from "../../assets/images/ic_pdf.png"
+import TableSkeleton from "../table/TableSkeleton";
 // add new user form
 function CreateTicketComponent() {
   const router = useRouter();
@@ -449,8 +450,9 @@ function CreateTicketComponent() {
     });
   };
 
-  console.log(formikRef.current?.values.ticketStatus, initialValues, "formikRef?.current?.values.ticketStatus");
-  
+  const isLoading = useSelector(
+    (state: any) => state.attendanceSystem?.isLoading
+  );
 
   return (
     <Grid className="page-content-wrapper">
@@ -577,7 +579,7 @@ function CreateTicketComponent() {
                       <Field
                         name="phoneNumber"
                         label="Phone Number"
-                        placeholder="Gender"
+                        placeholder="Phone Number"
                         className="w-100"
                         as={TextField}
                         helperText={<ErrorMessage name="phoneNumber" />}
@@ -666,7 +668,7 @@ function CreateTicketComponent() {
                         <option value={"Multi City"}>Multi City</option>
                       </Field>
                     </Grid>
-                    {parseInt(userRole) === 0 && userId && (
+                    {(parseInt(userRole) === 0 || parseInt(userRole) === 2) && userId && (
                       <>
                       <Grid item xs={12} sm={12} md={4}>
                         <Select
@@ -708,6 +710,7 @@ function CreateTicketComponent() {
                         {"Flight Ticket Upload"}
                       </Typography>
                     </Grid>
+                    {isLoading ? <TableSkeleton /> : 
                     <Grid item xs={12} sm={12} md={12}>
                       {!flightTicket ? (
                         <Grid
@@ -788,6 +791,7 @@ function CreateTicketComponent() {
                         </Grid>
                       )}
                     </Grid>
+}
                     </>
                     }
                     </>
