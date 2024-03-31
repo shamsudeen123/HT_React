@@ -32,6 +32,7 @@ import { END_POINT } from "@/redux/serverEndPoints";
 import moment from "moment";
 import { useRouter } from "next/navigation";
 import RefreshIcon from '@mui/icons-material/Refresh';
+import TableSkeleton from "../table/TableSkeleton";
 
 // import TableComponent from "../table/TableComponent";
 const TABLE_HEAD = [
@@ -218,6 +219,7 @@ if(reduxSearchInput || dealerId) {
   }
 
   const role = typeof localStorage !== 'undefined' && localStorage.getItem("role");
+  const isLoading = useSelector((state: any) => state?.attendanceSystem?.isLoading);
 
   return (
     <>
@@ -301,7 +303,8 @@ if(reduxSearchInput || dealerId) {
         </Grid>
       </Grid>
       <Grid>
-        {tableDatas?.length > 0 ? 
+        {isLoading ? <TableSkeleton /> : 
+        tableDatas?.length > 0 ? 
         <TableComponent
           headLabel={TABLE_HEAD}
           tableData={tableDatas}

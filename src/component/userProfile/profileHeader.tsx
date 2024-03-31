@@ -12,6 +12,7 @@ import emptyUseIcon from "../../assets/images/no_user.png";
 import EmptyContent from "../emptyContent/EmptyContent";
 import { END_POINT } from "@/redux/serverEndPoints";
 import moment from "moment";
+import DownloadIcon from "@mui/icons-material/Download";
 
 // add new user form
 function ProfileHeader() {
@@ -42,17 +43,27 @@ function ProfileHeader() {
   console.log(fieldValues, "fieldValues");
 
   const handleEditUser = () => {
-    router.push('/create-ticket?id='+ userId)
+    router.push("/create-ticket?id=" + userId);
   };
 
   const fileList: any = [];
 
   const data: any = fieldValues[0];
-  const role = typeof localStorage !== 'undefined' && localStorage.getItem("role");
+  const role =
+    typeof localStorage !== "undefined" && localStorage.getItem("role");
 
   // const passengers = fieldValues[0].passenger?.map((item: any) => {
 
   // })
+
+  function handleDownload(imageUrl: any) {
+    const downloadLink = document.createElement('a');
+    downloadLink.href = imageUrl;
+    downloadLink.download = 'image.jpg'; // You can specify the filename based on the URL or any other logic
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+}
 
   return (
     <Grid>
@@ -82,7 +93,9 @@ function ProfileHeader() {
               >
                 {data?.dealerName}
               </Typography>
-              <Grid sx={{ display: "flex", alignItems: "center", marginTop: 1 }}>
+              <Grid
+                sx={{ display: "flex", alignItems: "center", marginTop: 1 }}
+              >
                 <Typography
                   variant="body2"
                   className="fs-16 fw-600 secondary-font-color"
@@ -104,37 +117,54 @@ function ProfileHeader() {
                   className="fs-14 fw-400 primary-font-color"
                   sx={{ ml: "7px" }}
                 >
-                 Ticket Status: {data?.ticketStatus === "0" ? "Failed" : data?.ticketStatus === "1" ? "Started" : data?.ticketStatus === "2" ? "In Progress" : "Completed"}
+                  Ticket Status:{" "}
+                  {data?.ticketStatus === "0"
+                    ? "Failed"
+                    : data?.ticketStatus === "1"
+                    ? "Started"
+                    : data?.ticketStatus === "2"
+                    ? "In Progress"
+                    : "Completed"}
                 </Typography>
-                {data?.ticketStatus === "3" &&
-                <Typography
-                  variant="body2"
-                  className="fs-16 fw-600 secondary-font-color"
-                  sx={{ ml: "20px" }}
-                  
-                >
-                 <a href={data?.ticketImageUrl} target="_blank" style={{color: "#4baa85"}}>Download Ticket </a>
-                </Typography>
-}
+                {data?.ticketStatus === "3" && (
+                  <Typography
+                    variant="body2"
+                    className="fs-16 fw-600 secondary-font-color"
+                    sx={{ ml: "20px" }}
+                  >
+                    <a
+                      href={data?.ticketImageUrl}
+                      target="_blank"
+                      style={{ color: "#4baa85" }}
+                    >
+                      Download Ticket{" "}
+                    </a>
+                  </Typography>
+                )}
               </Grid>
-              {data?.amount &&
-              <Grid sx={{ display: "flex", alignItems: "center" }}>
-                <Typography
-                  variant="body1"
-                  className="fs-14 fw-400 primary-font-color"
-                  sx={{ ml: "7px", background: "#F3FBF8",
-                  borderRadius: "8px",
-                  p: "6px" }}
-                >
-                      Amount:
-                </Typography>
-               <Typography
-                      variant="body2"
-                      className="fs-14 fw-600 font-color-greeny-Blue"
-                      sx={{ ml: "7px" }}
-                    >{data?.amount}</Typography>
-              </Grid>
-}
+              {data?.amount && (
+                <Grid sx={{ display: "flex", alignItems: "center" }}>
+                  <Typography
+                    variant="body1"
+                    className="fs-14 fw-400 primary-font-color"
+                    sx={{
+                      ml: "7px",
+                      background: "#F3FBF8",
+                      borderRadius: "8px",
+                      p: "6px",
+                    }}
+                  >
+                    Amount:
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    className="fs-14 fw-600 font-color-greeny-Blue"
+                    sx={{ ml: "7px" }}
+                  >
+                    {data?.amount}
+                  </Typography>
+                </Grid>
+              )}
               <Grid
                 container
                 spacing={2}
@@ -189,22 +219,30 @@ function ProfileHeader() {
           </Grid>
         </Grid>
         <Grid item xs={12} sm={6} lg={4}>
-          <Grid container spacing={1} sx={{display: "flex", justifyContent: "end"}}>
+          <Grid
+            container
+            spacing={1}
+            sx={{ display: "flex", justifyContent: "end" }}
+          >
             {/* {role !== "1" && data?.ticketStatus !== "2" && */}
-            {role === "1" && data?.ticketStatus !== "1" ? <></> :
-            <Grid item xs={12} sm={6}>
-              <Button
-                variant="text"
-                className=" btn btn-without-bg edit w-100"
-                onClick={handleEditUser}
-                disabled={role === "1" && data?.ticketStatus !== "1" ? true : false}
-              >
-                <img src={editProfile.src} alt="" />
-                Edit Ticket
-              </Button>
-            </Grid>
-}
-{/* } */}
+            {role === "1" && data?.ticketStatus !== "1" ? (
+              <></>
+            ) : (
+              <Grid item xs={12} sm={6}>
+                <Button
+                  variant="text"
+                  className=" btn btn-without-bg edit w-100"
+                  onClick={handleEditUser}
+                  disabled={
+                    role === "1" && data?.ticketStatus !== "1" ? true : false
+                  }
+                >
+                  <img src={editProfile.src} alt="" />
+                  Edit Ticket
+                </Button>
+              </Grid>
+            )}
+            {/* } */}
             {/* <Grid item xs={12} sm={6}>
               <Button
                 variant="text"
@@ -354,7 +392,7 @@ function ProfileHeader() {
                     variant="body1"
                     className="fs-16 fw-400 primary-font-color"
                   >
-                   Itinerary Types
+                    Itinerary Types
                   </Typography>
                 </Grid>
                 <Grid item xs={6}>
@@ -370,7 +408,7 @@ function ProfileHeader() {
                     variant="body1"
                     className="fs-16 fw-400 primary-font-color"
                   >
-                   Traveller Type
+                    Traveller Type
                   </Typography>
                 </Grid>
                 <Grid item xs={6}>
@@ -378,7 +416,11 @@ function ProfileHeader() {
                     variant="body2"
                     className="fs-16 fw-600 primary-font-color"
                   >
-                    {data?.travellerType === "0" ? "Adult" : data?.travellerType === "0" ? "Child" : "Infant"}
+                    {data?.travellerType === "0"
+                      ? "Adult"
+                      : data?.travellerType === "0"
+                      ? "Child"
+                      : "Infant"}
                   </Typography>
                 </Grid>
               </Grid>
@@ -419,8 +461,23 @@ function ProfileHeader() {
                       borderRadius: "16px",
                       objectFit: "contain",
                       cursor: "pointer",
+                      position: "relative",
                     }}
                   />
+                  <a href={details?.passportImagePath} target="_blank" rel="noopener noreferrer">
+                    <DownloadIcon
+                      sx={{
+                        position: "absolute",
+                        right: 10,
+                        top: -26,
+                        height: 30,
+                        width: 30,
+                        color: "#4bb58c",
+                        cursor: "pointer"
+                      }}
+                      // onClick={() => handleDownload(details?.passportImagePath)}
+                    />
+                    </a>
 
                   {/* </>
                 ) : (
@@ -449,7 +506,10 @@ function ProfileHeader() {
               Sector Image
             </Typography>
             <Grid container spacing={1} sx={{ mt: "5px" }}>
-              <img src={data?.sectorImagePath} style={{width: "100%", height: 300, objectFit: "contain"}} />
+              <img
+                src={data?.sectorImagePath}
+                style={{ width: "100%", height: 300, objectFit: "contain" }}
+              />
             </Grid>
           </Grid>
         </Grid>
